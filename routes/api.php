@@ -16,4 +16,9 @@ use Illuminate\Support\Facades\Route;
 
 Route::namespace('Api')->group(function () {
     Route::post('auth', 'AuthController@store');
+
+    Route::middleware(['auth:api'])->group(function () {
+        Route::get('plans', 'PlanController@index');
+        Route::post('plans', 'PlanController@store');
+      });
 });

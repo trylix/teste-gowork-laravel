@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Office extends Model
 {
     protected $fillable = [
-        'name', 'monthly_cost'
+        'name', 'city', 'state', 'image'
     ];
 
     protected $hidden = [
