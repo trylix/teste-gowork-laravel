@@ -29,5 +29,7 @@ Route::namespace('Api')->group(function () {
 
         Route::get('employees/{customer_id?}', 'EmployeeController@index');
         Route::post('employees', 'EmployeeController@store');
+
+        Route::post('upload', 'FileController@store');
       });
 });
