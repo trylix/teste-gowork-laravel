@@ -26,5 +26,8 @@ Route::namespace('Api')->group(function () {
 
         Route::get('customers', 'CustomerController@index');
         Route::post('customers', 'CustomerController@store');
+
+        Route::get('employees/{customer_id?}', 'EmployeeController@index');
+        Route::post('employees', 'EmployeeController@store');
       });
 });
