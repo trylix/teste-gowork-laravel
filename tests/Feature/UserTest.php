@@ -53,4 +53,35 @@ class UserTest extends TestCase
             'error',
         ]);
     }
+
+    /** @test */
+    public function should_be_able_to_register_user() {
+        $response = $this->post('api/user', [
+            'name' => 'Adriana Teste',
+            'email' => 'test2020@gmail.com',
+            'password' => 'umasenhaqualquuer',
+        ]);
+
+        $response->assertStatus(201);
+    }
+
+    /** @test */
+    public function should_be_not_able_to_register_user_duplicated_email() {
+        $response = $this->post('api/user', [
+            'name' => 'Adriana Teste',
+            'email' => 'test@email.com',
+            'password' => 'umasenhaqualquuer',
+        ]);
+
+        $response->assertStatus(302);
+    }
+
+    /** @test */
+    public function should_be_not_able_to_register_user_missing_fields() {
+        $response = $this->post('api/user', [
+            'email' => 'test@email.com',
+        ]);
+
+        $response->assertStatus(302);
+    }
 }
