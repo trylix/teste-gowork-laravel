@@ -20,5 +20,8 @@ Route::namespace('Api')->group(function () {
     Route::middleware(['auth:api'])->group(function () {
         Route::get('plans', 'PlanController@index');
         Route::post('plans', 'PlanController@store');
+
+        Route::get('offices', 'OfficeController@index');
+        Route::post('offices', 'OfficeController@store');
       });
 });
