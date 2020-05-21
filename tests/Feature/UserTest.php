@@ -73,7 +73,7 @@ class UserTest extends TestCase
             'password' => 'umasenhaqualquuer',
         ]);
 
-        $response->assertStatus(302);
+        $response->assertStatus(401);
     }
 
     /** @test */
@@ -82,6 +82,6 @@ class UserTest extends TestCase
             'email' => 'test@email.com',
         ]);
 
-        $response->assertStatus(302);
+        $response->assertStatus(401);
     }
 }
