@@ -1,79 +1,172 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+<p align="center"><img src=".github/logo.png" width="400"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+<p  align="center">Este codigo representa a minha solução do teste proposto pela <a  href="https://www.gowork.com.br/">GoWork</a></p>
 
-## About Laravel
+## 🚀 Sobre o projeto
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Coplace é uma aplicação para gerenciamento de clientes de coworking desenvolvida como resolução ao [teste para a vaga de fullstack na empresa GoWork](https://github.com/ctg325/teste-gowork), desenvolvida com [React para o front-end](https://github.com/trylix/teste-gowork-frontend) e duas versões para o back-end, uma em [PHP com Laravel](https://github.com/trylix/teste-gowork-laravel) e outra em [NodeJS e Express](https://github.com/trylix/teste-gowork-nodejs).
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Ambas versões do projeto para backend foram desenvolvidas seguindo os princípios de [TDD](https://pt.wikipedia.org/wiki/Test-driven_development). 👮🏻‍♂️
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+-   [Resolução do teste](#-resolução-do-teste)
+-   [Tecnologias](#-tecnologias)
+-   [Instalação e execução](#-instalação-e-execução)
+-   [Documentação da API](#-rotas-da-api)
+-   [Próxima etapa](#-próxima-etapa)
 
-## Learning Laravel
+## 🤯 Resolução do teste
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+A aplicação hoje contempla:
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+✅ Cadastro de Usuários
 
-## Laravel Sponsors
+✅ Autenticação de usuários através de email e senha
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+✅ Cadastro de Unidades (Escritorios)
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-- [Appoly](https://www.appoly.co.uk)
-- [OP.GG](https://op.gg)
-- [云软科技](http://www.yunruan.ltd/)
+> Foi criado o endpoint `/offices` onde o usuário pode consumir os dados das unidades já disponíveis e também cadastrar novas unidades.
 
-## Contributing
+✅ Cadastro de Planos de Coworking, contendo Nome do Plano, Valor Mensal
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+> Foi criado o endpoint `/plans` onde o usuário realiza a gestão dos planos oferecidos pela empresa.
 
-## Code of Conduct
+✅ Cadastro de Clientes (Pessoa Fisica e Juridica) vinculado com Plano Contratado e Unidade
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+> Foi criado o endpoint `/customers` onde o usuário poderá listar seus clientes atuais e também adicionar novos.
 
-## Security Vulnerabilities
+✅ Cadastro de Funcionarios do Cliente/Pessoas que podem usar o Coworking
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+> Foi criado o endpoint `/employees` onde o usuário realizará a gestão de funcionários de seus clientes.
 
-## License
+## 👀 Preview
+![](.github/preview.gif)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🛸 Tecnologias
+
+Esse projeto foi desenvolvido com:
+
+-   [PHP](hhttps://www.php.net/)
+-   [Laravel](https://laravel.com/)
+
+## 🛠 Instalação e execução
+
+**Faça um clone desse repositório**
+
+-   Execute `composer install` para instalar o composer;
+-   Execute `cp .env.example .env` e preencha o arquivo `.env` com suas variáveis ambiente;
+-   Execute `php artisan key:generate` para gerar uma nova key.
+-   Execute `php artisan jwt:secret` para gerar uma nova key JWT.
+-   Execute `php artisan migrate` para executar as migrations do banco de dados.
+-   Execute `php artisan storage:link` para criar um link público pasta storage (armazenamento de arquivos feito por upload).
+
+**Testes**
+
+-   Execute `php artisian test`
+
+## 🚗 Rotas da API
+
+### POST `/api/auth`
+
+> Realiza a autenticação do usuário administrador
+>
+> | Params | Query  | Body               | Response           |
+> | ------ | ------ | ------------------ | ------------------ |
+> | `null` | `null` | `application/json` | `application/json` |
+
+### GET `/api/offices`
+
+> Realiza a listagem de unidades/escritórios
+
+| Params | Query  | Body   | Response           |
+| ------ | ------ | ------ | ------------------ |
+| `null` | `null` | `null` | `application/json` |
+
+### POST `/api/offices`
+
+> Realiza o cadastramento de unidade/escritório
+
+| Params | Query  | Body               | Response           |
+| ------ | ------ | ------------------ | ------------------ |
+| `null` | `null` | `application/json` | `application/json` |
+
+### GET `/api/plans`
+
+> Realiza a listagem de planos
+
+| Params | Query  | Body   | Response           |
+| ------ | ------ | ------ | ------------------ |
+| `null` | `null` | `null` | `application/json` |
+
+### POST `/api/plans`
+
+> Realiza o cadastramento de planos
+
+| Params | Query  | Body               | Response           |
+| ------ | ------ | ------------------ | ------------------ |
+| `null` | `null` | `application/json` | `application/json` |
+
+### GET `/api/customers`
+
+> Realiza a listagem de clientes
+
+| Params | Query  | Body   | Response           |
+| ------ | ------ | ------ | ------------------ |
+| `null` | `null` | `null` | `application/json` |
+
+### POST `/api/customers`
+
+> Realiza o cadastramento de clientes
+
+| Params | Query  | Body               | Response           |
+| ------ | ------ | ------------------ | ------------------ |
+| `null` | `null` | `application/json` | `application/json` |
+
+### GET `/api/employees/{1}`
+
+> Realiza a listagem de funcionários de um cliente
+
+| Params | Query           | Body   | Response           |
+| ------ | --------------- | ------ | ------------------ |
+| `null` | `ID do cliente` | `null` | `application/json` |
+
+### POST `/api/employees`
+
+> Realiza o cadastramento de um funcionário
+
+| Params | Query  | Body               | Response           |
+| ------ | ------ | ------------------ | ------------------ |
+| `null` | `null` | `application/json` | `application/json` |
+
+### POST `/api/upload`
+
+> Realiza o upload de um arquivo
+
+| Params | Query  | Body                  | Response           |
+| ------ | ------ | --------------------- | ------------------ |
+| `null` | `null` | `multipart/form-data` | `application/json` |
+
+## 📌 Próxima etapa
+
+**Unidades**
+
+-   Deleter unidade
+-   Editar unidade
+
+**Planos**
+
+-   Deleter unidade
+-   Editar unidade
+
+**Clientes**
+
+-   Deleter unidade
+-   Editar unidade
+
+**Funcionários**
+
+-   Deleter unidade
+-   Editar unidade
+
+---
+
+Feito com ♥️ by Brendenson - [Github](https://github.com/trylix) | [LinkedIn](https://www.linkedin.com/in/dobrendenson)
