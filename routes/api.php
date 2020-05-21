@@ -23,5 +23,8 @@ Route::namespace('Api')->group(function () {
 
         Route::get('offices', 'OfficeController@index');
         Route::post('offices', 'OfficeController@store');
+
+        Route::get('customers', 'CustomerController@index');
+        Route::post('customers', 'CustomerController@store');
       });
 });
